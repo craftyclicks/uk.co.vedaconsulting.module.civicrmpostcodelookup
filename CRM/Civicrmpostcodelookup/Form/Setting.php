@@ -91,7 +91,7 @@ class CRM_Civicrmpostcodelookup_Form_Setting extends CRM_Core_Form {
     $errors = array();
 
     // Server is mandatory fo AFD and CiviPostcode. Server URL is in QAS lib for Experian
-    if ($values['provider'] == 'afd' || $values['provider'] == 'civipostcode' || $values['provider'] == 'postcodeanywhere') {
+    if ($values['provider'] == 'afd' || $values['provider'] == 'civipostcode' || $values['provider'] == 'postcodeanywhere' || $values['provider'] == 'craftyclicks') {
       if (empty($values['server'])) {
         $errors['server'] = ts( "Server URL is mandatory." );
       }
@@ -134,6 +134,13 @@ class CRM_Civicrmpostcodelookup_Form_Setting extends CRM_Core_Form {
       }
     }
 
+    // Check all mandatory values are entered for CraftyClicks
+    if ($values['provider'] == 'craftyclicks') {
+      if (empty($values['api_key'])) {
+        $errors['api_key'] = ts( "API Key is mandatory." );
+      }
+    }
+
     return $errors;
   }
 
@@ -167,6 +174,12 @@ class CRM_Civicrmpostcodelookup_Form_Setting extends CRM_Core_Form {
       $settingsArray['server'] = $values['server'];
       $settingsArray['api_key'] = $values['api_key'];
       $settingsArray['username'] = $values['username'];
+    }
+
+    // CraftyClicks
+    if ($values['provider'] =='craftyclicks')  {
+      $settingsArray['server'] = $values['server'];
+      $settingsArray['api_key'] = $values['api_key'];
     }
 
     $settingsStr = serialize($settingsArray);

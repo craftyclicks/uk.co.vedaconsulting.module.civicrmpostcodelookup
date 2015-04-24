@@ -46,4 +46,14 @@
      <page_callback>CRM_Civicrmpostcodelookup_Page_PostcodeAnywhere::getaddress</page_callback>
      <access_arguments>view event info</access_arguments>
   </item>
+  <item>
+     <path>civicrm/craftyclicks/ajax/search</path>
+     <page_callback>CRM_Civicrmpostcodelookup_Page_CraftyClicks::search</page_callback>
+     <access_arguments>view event info</access_arguments>
+  </item>
+  <item>
+     <path>civicrm/craftyclicks/ajax/get</path>
+     <page_callback>CRM_Civicrmpostcodelookup_Page_CraftyClicks::getaddress</page_callback>
+     <access_arguments>view event info</access_arguments>
+  </item>
 </menu>

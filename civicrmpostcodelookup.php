@@ -9,6 +9,7 @@ $GLOBALS["providers"] = array(
       'civipostcode' => 'CiviPostcode',
       'experian' => 'Experian',
       'postcodeanywhere' => 'PostcodeAnywhere',
+      'craftyclicks' => 'CraftyClicks',
       );
 
 /**

@@ -78,6 +78,11 @@ function showFields() {
     cj('#username').parent().parent().show();
     cj('#server').val('http://services.postcodeanywhere.co.uk');
   }
+  if (providerVal == 'craftyclicks') {
+    cj('#server').parent().parent().show();
+    cj('#api_key').parent().parent().show();
+    cj('#server').val('http://pcls1.craftyclicks.co.uk/json/rapidaddress');
+  }
 }
 </script>
 {/literal}
